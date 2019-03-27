@@ -535,19 +535,6 @@ let embed = new Discord.RichEmbed()
     });//client Codes
 
 
-  client.on('ready',async () => {//client Codes
-  console.log("Starting..");//client Codes
-  let g = client.guilds.get("542303675855667201"); // id server
-  let c = g.channels.get("560419675368849420");// id channel
-  if(c.type === 'voice') {//client Codes
-  c.join();//client Codes
-  setInterval(() => {//client Codes
-  if(!g.me.voiceChannel) c.join();
-  }, 1);//client Codes
-  } else {//client Codes
-  console.log("Failed To Join:\n The Channel Type isn't \"text\"");
-  }//client Codes
-  });
 
   client.on('message', message => {
   var args = message.content.split(" ").slice(1);    
