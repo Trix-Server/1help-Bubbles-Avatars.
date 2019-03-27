@@ -24,9 +24,9 @@
 
   const suck = JSON.parse(fs.readFileSync('./suck.json', 'utf8'));
 
-  const prefix = "m!";
+  const prefix = "1";
 
-  const devs = ["348953140315291649"];
+  const devs = ["538676483455975431"];
 /////////giftR/////////
 giftKeys = {};
 client.on("message", msg =>{
@@ -413,23 +413,23 @@ let embed = new Discord.RichEmbed()
 
 
   client.on('message', message => {
-      if (message.content === 'm!help') {
+      if (message.content === '1help') {
           let helpEmbed = new Discord.RichEmbed()
           .setTitle('**أوامر الميوزك...**')
-          .setDescription('**برفكس البوت (m!)**')
+          .setDescription('**برفكس البوت (1)**')
           .addField('play', 'لتشغيل اغنية')
           .addField('skip', 'تخطي الأغنية')
           .addField('pause', 'ايقاف الاغنية مؤقتا')
           .addField('resume', 'تكملة الاغنية')
           .addField('queue', 'اظهار قائمة التشغيل')
           .addField('np', 'اظهار الاغنية اللي انت مشغلها حاليا')
-          .setFooter('(m!general_commands) لاظهار الاوامر العامة')
+          .setFooter('(1general_commands) لاظهار الاوامر العامة')
         message.channel.send(helpEmbed);
       }
   });
 
   client.on('message', message => {
-      if (message.content === 'm!general_commands') {
+      if (message.content === '1general_commands') {
           let helpEmbed = new Discord.RichEmbed()
           .setTitle('**أوامر عامة...**')
           .addField('avatar', "افاتار الشخص المطلوب")
@@ -453,12 +453,12 @@ let embed = new Discord.RichEmbed()
         console.log(`ON ${client.guilds.size} Servers '     Script By : EX Clan ' `);
       console.log(`----------------`);
     console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setGame(`m!play |m!help|BY ~ Yasser AlQahtani#6021|`,"http://twitch.tv/Death Shop")
+  client.user.setGame(`1help Bubbles Avatars.|`,"http://twitch.tv/Death Shop")
   client.user.setStatus("dnd")
   });
 
   client.on('message', message => {
-    if(message.content.startsWith(`m!inv`)){
+    if(message.content.startsWith(`1inv`)){
       if(!message.channel.guild) return message.channel.send("This Command is Just For Servers!")
                 message.react('🌈')
       var embed = new Discord.RichEmbed()
@@ -472,23 +472,23 @@ let embed = new Discord.RichEmbed()
   });
 
 
-  const adminprefix = "m!";
+  const adminprefix = "1";
   client.on('message', message => {
       var argresult = message.content.split(` `).slice(1).join(' ');
         if (!devs.includes(message.author.id)) return;
         
-    if (message.content.startsWith(adminprefix + 'ply')) {
+    if (message.content.startsWith(adminprefix + 'setgame playing')) {
       client.user.setGame(argresult);
         message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
     } else 
       if (message.content === (adminprefix + "Percie")) {
       message.guild.leave();        
     } else  
-    if (message.content.startsWith(adminprefix + 'wt')) {
+    if (message.content.startsWith(adminprefix + 'setgame watching')) {
     client.user.setActivity(argresult, {type:'WATCHING'});
         message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
     } else 
-    if (message.content.startsWith(adminprefix + 'ls')) {
+    if (message.content.startsWith(adminprefix + 'setgame listening')) {
     client.user.setActivity(argresult , {type:'LISTENING'});
         message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
     } else     
@@ -501,7 +501,7 @@ let embed = new Discord.RichEmbed()
     client.user.setAvatar(argresult);
       message.channel.sendMessage(`**${argresult}** : تم تغير صورة البوت`);
           } else     
-    if (message.content.startsWith(adminprefix + 'st')) {
+    if (message.content.startsWith(adminprefix + 'setgame stream')) {
       client.user.setGame(argresult, "https://www.twitch.tv/mohamedgamal");
         message.channel.sendMessage(`**:white_check_mark:   ${argresult}**`)
     }
@@ -520,7 +520,7 @@ let embed = new Discord.RichEmbed()
 
   client.on('message', message => { //client Codes
       if (message.author.bot) return;//client Codes
-      if(message.content == 'm!mb') {//client Codes
+      if(message.content == '1mb') {//client Codes
       const embed = new Discord.RichEmbed()//client Codes
       .addField(`حالة الأعضاء 🔋`,'-',   true)//client Codes
   .addField(`💚 اونلاين :   ${message.guild.members.filter(m=>m.presence.status == 'online').size}`,'-',   true)//client Codes
@@ -537,23 +537,8 @@ let embed = new Discord.RichEmbed()
 
   client.on('ready',async () => {//client Codes
   console.log("Starting..");//client Codes
-  let g = client.guilds.get("528649421974405120"); // id server
+  let g = client.guilds.get("542303675855667201"); // id server
   let c = g.channels.get("528649421974405130");// id channel
-  if(c.type === 'voice') {//client Codes
-  c.join();//client Codes
-  setInterval(() => {//client Codes
-  if(!g.me.voiceChannel) c.join();
-  }, 1);//client Codes
-  } else {//client Codes
-  console.log("Failed To Join:\n The Channel Type isn't \"text\"");
-  }//client Codes
-  });
-
-
-  client.on('ready',async () => {//client Codes
-  console.log("Starting..");//client Codes
-  let g = client.guilds.get("543492592642293770"); // id server
-  let c = g.channels.get("544876420732813312");// id channel
   if(c.type === 'voice') {//client Codes
   c.join();//client Codes
   setInterval(() => {//client Codes
@@ -636,7 +621,7 @@ let embed = new Discord.RichEmbed()
     });
 
   client.on('message', rw => { 
-    if (rw.content.startsWith('m!vb')) { 
+    if (rw.content.startsWith('1vb')) { 
   if (!rw.member.hasPermission("MOVE_MEMBERS")) return rw.channel.send("**YOU DONT HAVE PERMISSION** | ❎ ");
   let men = rw.mentions.users.first() 
   let mas = rw.author 
@@ -668,7 +653,7 @@ let embed = new Discord.RichEmbed()
   
   //فكه 
   client.on('message', rw => { 
-    if (rw.content.startsWith('m!uvb')) {
+    if (rw.content.startsWith('1uvb')) {
   if (!rw.member.hasPermission("MOVE_MEMBERS")) return rw.channel.send("**YOU DONT HAVE PERMISSION** | ❎ ");
   let men = rw.mentions.users.first()
   let mas = rw.author 
