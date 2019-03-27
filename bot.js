@@ -538,7 +538,7 @@ let embed = new Discord.RichEmbed()
   client.on('ready',async () => {//client Codes
   console.log("Starting..");//client Codes
   let g = client.guilds.get("542303675855667201"); // id server
-  let c = g.channels.get("528649421974405130");// id channel
+  let c = g.channels.get("560419675368849420");// id channel
   if(c.type === 'voice') {//client Codes
   c.join();//client Codes
   setInterval(() => {//client Codes
